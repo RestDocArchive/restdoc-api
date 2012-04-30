@@ -16,6 +16,7 @@ import java.io.File;
 import java.io.InputStream;
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 import org.restdoc.api.RestDoc;
 
 /**
@@ -64,9 +65,24 @@ public class RestDocParser {
 		return null;
 	}
 
+	/**
+	 * @param doc
+	 *            the {@link RestDoc} object
+	 * @return the JSON String
+	 */
+	public static String writeRestDoc(RestDoc doc) {
+		try {
+			return RestDocParser.createMapper().writeValueAsString(doc);
+		} catch (final Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+
 	private static ObjectMapper createMapper() {
 		final ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(org.codehaus.jackson.JsonParser.Feature.ALLOW_COMMENTS, true);
+		mapper.setSerializationInclusion(Inclusion.NON_NULL);
 
 		return mapper;
 	}

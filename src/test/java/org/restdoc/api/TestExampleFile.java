@@ -12,8 +12,6 @@
  */
 package org.restdoc.api;
 
-import java.net.URL;
-
 import org.junit.Test;
 import org.restdoc.api.util.RestDocParser;
 
@@ -26,20 +24,10 @@ public class TestExampleFile {
 	/**
 	 * 
 	 */
-	// @Test
-	public void readIS() {
-		final URL resource = this.getClass().getResource("/DemoAPI.json");
-		System.out.println(resource);
-		System.out.println(resource.getFile());
-	}
-
-	/**
-	 * 
-	 */
 	@Test
 	public void parse() {
 		final RestDoc doc = RestDocParser.parseResource("/DemoAPI.json");
-		System.out.println(doc);
+		System.out.println(RestDocParser.writeRestDoc(doc));
 	}
 
 }
