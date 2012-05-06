@@ -52,7 +52,7 @@
 			"methods" : {
 				"PUT" : {
 					"description" : "Update or create a message",
-					"statusCodes" : [201],
+					"statusCodes" : { "201": "Created" },
 					"accepts" : [// Representations accepted by the method on this resource.
 						{
 							"type" : "text/plain"
@@ -101,7 +101,10 @@
 				},
 				"GET" : {
 					"description" : "Retrieve a message",
-					"statusCodes" : [200, 302],
+					"statusCodes": { 
+			             "200": "Message retrieved successfully", 
+            			 "401": "Parameter error"
+          			},
 					"accepts" : []// Explicitly indicate that this method takes no request body.
 				}
 			}
@@ -110,10 +113,10 @@
 			"id" : "FallbackLocale",
 			"methods" : {
 				"GET" : {
-					"statusCodes" : [200]
+					"statusCodes": { "200": "OK" }
 				},
 				"PUT" : {
-					"statusCodes" : [201]
+					"statusCodes": { "201": "Created" }
 				}
 			},
 			"params" : {

@@ -25,7 +25,7 @@ public class MethodDefinition {
 
 	private String description;
 
-	private int[] statusCodes;
+	private final Map<String, String> statusCodes = new HashMap<String, String>();
 
 	private final List<Representation> accepts = new ArrayList<Representation>();
 
@@ -53,16 +53,8 @@ public class MethodDefinition {
 	/**
 	 * @return the statusCodes
 	 */
-	public int[] getStatusCodes() {
+	public Map<String, String> getStatusCodes() {
 		return this.statusCodes;
-	}
-
-	/**
-	 * @param statusCodes
-	 *            the statusCodes to set
-	 */
-	public void setStatusCodes(int[] statusCodes) {
-		this.statusCodes = statusCodes;
 	}
 
 	/**
