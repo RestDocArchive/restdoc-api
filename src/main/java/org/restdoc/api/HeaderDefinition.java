@@ -18,7 +18,7 @@ package org.restdoc.api;
  */
 public class HeaderDefinition {
 
-	private String description;
+	private String description = "";
 
 	private boolean required = false;
 

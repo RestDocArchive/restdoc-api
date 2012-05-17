@@ -13,7 +13,7 @@
 package org.restdoc.api;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * @author hoegertn
@@ -21,9 +21,9 @@ import java.util.List;
  */
 public class RestDoc {
 
-	private GlobalHeader headers;
+	private GlobalHeader headers = new GlobalHeader();
 
-	private List<RestResource> resources = new ArrayList<RestResource>();
+	private Collection<RestResource> resources = new ArrayList<RestResource>();
 
 	/**
 	 * @return the headers
@@ -43,7 +43,7 @@ public class RestDoc {
 	/**
 	 * @return the resources
 	 */
-	public List<RestResource> getResources() {
+	public Collection<RestResource> getResources() {
 		return this.resources;
 	}
 
@@ -51,7 +51,7 @@ public class RestDoc {
 	 * @param resources
 	 *            the resources to set
 	 */
-	public void setResources(List<RestResource> resources) {
+	public void setResources(Collection<RestResource> resources) {
 		this.resources = resources;
 	}
 

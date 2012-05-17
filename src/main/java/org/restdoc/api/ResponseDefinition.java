@@ -13,8 +13,8 @@
 package org.restdoc.api;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -23,14 +23,14 @@ import java.util.Map;
  */
 public class ResponseDefinition {
 
-	private final List<Representation> types = new ArrayList<Representation>();
+	private final Collection<Representation> types = new ArrayList<Representation>();
 
 	private final Map<String, HeaderDefinition> headers = new HashMap<String, HeaderDefinition>();
 
 	/**
 	 * @return the types
 	 */
-	public List<Representation> getTypes() {
+	public Collection<Representation> getTypes() {
 		return this.types;
 	}
 

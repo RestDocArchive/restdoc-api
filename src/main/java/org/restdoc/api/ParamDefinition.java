@@ -13,7 +13,7 @@
 package org.restdoc.api;
 
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * @author hoegertn
@@ -21,9 +21,9 @@ import java.util.List;
  */
 public class ParamDefinition {
 
-	private String description;
+	private String description = "";
 
-	private final List<ParamValidation> validations = new ArrayList<ParamValidation>();
+	private final Collection<ParamValidation> validations = new ArrayList<ParamValidation>();
 
 	/**
 	 * @return the description
@@ -43,7 +43,7 @@ public class ParamDefinition {
 	/**
 	 * @return the validations
 	 */
-	public List<ParamValidation> getValidations() {
+	public Collection<ParamValidation> getValidations() {
 		return this.validations;
 	}
 

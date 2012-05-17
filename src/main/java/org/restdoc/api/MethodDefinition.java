@@ -13,8 +13,8 @@
 package org.restdoc.api;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 /**
@@ -27,13 +27,13 @@ public class MethodDefinition {
 
 	private final Map<String, String> statusCodes = new HashMap<String, String>();
 
-	private final List<Representation> accepts = new ArrayList<Representation>();
+	private final Collection<Representation> accepts = new ArrayList<Representation>();
 
 	private final Map<String, HeaderDefinition> headers = new HashMap<String, HeaderDefinition>();
 
 	private ResponseDefinition response;
 
-	private final List<ExampleRequest> examples = new ArrayList<ExampleRequest>();
+	private final Collection<ExampleRequest> examples = new ArrayList<ExampleRequest>();
 
 	/**
 	 * @return the description
@@ -75,7 +75,7 @@ public class MethodDefinition {
 	/**
 	 * @return the accepts
 	 */
-	public List<Representation> getAccepts() {
+	public Collection<Representation> getAccepts() {
 		return this.accepts;
 	}
 
@@ -89,7 +89,7 @@ public class MethodDefinition {
 	/**
 	 * @return the examples
 	 */
-	public List<ExampleRequest> getExamples() {
+	public Collection<ExampleRequest> getExamples() {
 		return this.examples;
 	}
 
