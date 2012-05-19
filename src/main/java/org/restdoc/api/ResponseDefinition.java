@@ -17,10 +17,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "types", "headers" })
 public class ResponseDefinition {
 
 	private final Collection<Representation> types = new ArrayList<Representation>();

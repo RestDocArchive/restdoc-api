@@ -14,15 +14,25 @@ package org.restdoc.api;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.HashMap;
+
+import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
 
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "schemas", "headers", "resources" })
 public class RestDoc {
 
+	@JsonProperty("schemas")
+	private HashMap<String, Schema> schemas = new HashMap<String, Schema>();
+
+	@JsonProperty("headers")
 	private GlobalHeader headers = new GlobalHeader();
 
+	@JsonProperty("resources")
 	private Collection<RestResource> resources = new ArrayList<RestResource>();
 
 	/**
@@ -53,6 +63,21 @@ public class RestDoc {
 	 */
 	public void setResources(Collection<RestResource> resources) {
 		this.resources = resources;
+	}
+
+	/**
+	 * @return the schemas
+	 */
+	public HashMap<String, Schema> getSchemas() {
+		return this.schemas;
+	}
+
+	/**
+	 * @param schemas
+	 *            the schemas to set
+	 */
+	public void setSchemas(HashMap<String, Schema> schemas) {
+		this.schemas = schemas;
 	}
 
 }

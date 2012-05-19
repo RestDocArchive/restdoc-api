@@ -15,10 +15,13 @@ package org.restdoc.api;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "description", "validations" })
 public class ParamDefinition {
 
 	private String description = "";

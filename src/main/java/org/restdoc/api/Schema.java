@@ -12,62 +12,65 @@
  */
 package org.restdoc.api;
 
-import java.util.HashMap;
-import java.util.Map;
-
-import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.codehaus.jackson.schema.JsonSchema;
 
 /**
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "path", "body", "headers" })
-public class ExampleRequest {
+@JsonPropertyOrder({ "type", "url", "schema" })
+public class Schema {
 
-	@JsonProperty("path")
-	private String path;
+	private String type = "inline";
 
-	@JsonProperty("body")
-	private String body;
+	private String url;
 
-	private final Map<String, String> headers = new HashMap<String, String>();
+	private JsonSchema schema;
 
 	/**
-	 * @return the path
+	 * @return the type
 	 */
-	public String getPath() {
-		return this.path;
+	public String getType() {
+		return this.type;
 	}
 
 	/**
-	 * @param path
-	 *            the path to set
+	 * @param type
+	 *            the type to set
 	 */
-	public void setPath(String path) {
-		this.path = path;
+	public void setType(String type) {
+		this.type = type;
 	}
 
 	/**
-	 * @return the body
+	 * @return the url
 	 */
-	public String getBody() {
-		return this.body;
+	public String getUrl() {
+		return this.url;
 	}
 
 	/**
-	 * @param body
-	 *            the body to set
+	 * @param url
+	 *            the url to set
 	 */
-	public void setBody(String body) {
-		this.body = body;
+	public void setUrl(String url) {
+		this.url = url;
 	}
 
 	/**
-	 * @return the headers
+	 * @return the schema
 	 */
-	public Map<String, String> getHeaders() {
-		return this.headers;
+	public JsonSchema getSchema() {
+		return this.schema;
+	}
+
+	/**
+	 * @param schema
+	 *            the schema to set
+	 */
+	public void setSchema(JsonSchema schema) {
+		this.schema = schema;
 	}
 
 }

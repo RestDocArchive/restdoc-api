@@ -79,7 +79,10 @@ public class RestDocParser {
 		return null;
 	}
 
-	private static ObjectMapper createMapper() {
+	/**
+	 * @return the Jackson mapper for RestDoc
+	 */
+	public static ObjectMapper createMapper() {
 		final ObjectMapper mapper = new ObjectMapper();
 		mapper.configure(org.codehaus.jackson.JsonParser.Feature.ALLOW_COMMENTS, true);
 		mapper.setSerializationInclusion(Inclusion.NON_NULL);

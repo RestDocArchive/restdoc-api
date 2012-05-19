@@ -12,10 +12,13 @@
  */
 package org.restdoc.api;
 
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "type", "pattern" })
 public class ParamValidation {
 
 	private String type;

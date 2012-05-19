@@ -17,10 +17,13 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "description", "statusCodes", "accepts", "headers", "response", "examples" })
 public class MethodDefinition {
 
 	private String description;

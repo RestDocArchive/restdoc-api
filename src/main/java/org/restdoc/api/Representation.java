@@ -12,10 +12,13 @@
  */
 package org.restdoc.api;
 
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
+
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "type", "schema" })
 public class Representation {
 
 	private String type;

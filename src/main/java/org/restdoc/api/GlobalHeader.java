@@ -16,11 +16,13 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonProperty;
+import org.codehaus.jackson.annotate.JsonPropertyOrder;
 
 /**
  * @author hoegertn
  * 
  */
+@JsonPropertyOrder({ "request", "response" })
 public class GlobalHeader {
 
 	@JsonProperty("request")
