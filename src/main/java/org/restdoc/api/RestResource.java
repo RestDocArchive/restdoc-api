@@ -12,6 +12,7 @@
  */
 package org.restdoc.api;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -93,8 +94,58 @@ public class RestResource {
 		return this.methods;
 	}
 
-	// ######################################################################
-	// convenience methods
-	// ######################################################################
+	// #############################################################
+	// nice builder methods
+	// #############################################################
 
+	/**
+	 * @param id
+	 * @return this
+	 */
+	public RestResource id(String id) {
+		this.setId(id);
+		return this;
+	}
+
+	/**
+	 * @param description
+	 * @return this
+	 */
+	public RestResource description(String description) {
+		this.setDescription(description);
+		return this;
+	}
+
+	/**
+	 * @param path
+	 * @return this
+	 */
+	public RestResource path(String path) {
+		this.setPath(path);
+		return this;
+	}
+
+	/**
+	 * @param name
+	 * @param description
+	 * @param validations
+	 * @return this
+	 */
+	public RestResource param(String name, String description, ParamValidation... validations) {
+		final ParamDefinition def = new ParamDefinition();
+		def.setDescription(description);
+		def.getValidations().addAll(Arrays.asList(validations));
+		this.getParams().put(name, def);
+		return this;
+	}
+
+	/**
+	 * @param verb
+	 * @param method
+	 * @return this
+	 */
+	public RestResource method(String verb, MethodDefinition method) {
+		this.getMethods().put(verb, method);
+		return this;
+	}
 }

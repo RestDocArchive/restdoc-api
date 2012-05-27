@@ -29,6 +29,20 @@ public class ParamDefinition {
 	private final Collection<ParamValidation> validations = new ArrayList<ParamValidation>();
 
 	/**
+	 * 
+	 */
+	public ParamDefinition() {
+		//
+	}
+
+	/**
+	 * @param description
+	 */
+	public ParamDefinition(String description) {
+		this.description = description;
+	}
+
+	/**
 	 * @return the description
 	 */
 	public String getDescription() {

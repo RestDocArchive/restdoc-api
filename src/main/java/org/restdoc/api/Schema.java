@@ -73,4 +73,27 @@ public class Schema {
 		this.schema = schema;
 	}
 
+	// #############################################################
+	// nice builder methods
+	// #############################################################
+
+	/**
+	 * @param schema
+	 * @return this
+	 */
+	public Schema schema(JsonSchema schema) {
+		this.setType("inline");
+		this.setSchema(schema);
+		return this;
+	}
+
+	/**
+	 * @param url
+	 * @return this
+	 */
+	public Schema url(String url) {
+		this.setType("url");
+		this.setUrl(url);
+		return this;
+	}
 }

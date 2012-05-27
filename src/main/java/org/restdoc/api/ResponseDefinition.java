@@ -44,4 +44,32 @@ public class ResponseDefinition {
 		return this.headers;
 	}
 
+	// #############################################################
+	// nice builder methods
+	// #############################################################
+
+	/**
+	 * @param type
+	 * @param schema
+	 * @return this
+	 */
+	public ResponseDefinition type(String type, String schema) {
+		final Representation def = new Representation();
+		def.setSchema(schema);
+		def.setType(type);
+		this.getTypes().add(def);
+		return this;
+	}
+
+	/**
+	 * @param name
+	 * @param description
+	 * @param required
+	 * @return this
+	 */
+	public ResponseDefinition header(String name, String description, boolean required) {
+		final HeaderDefinition def = new HeaderDefinition(description, required);
+		this.getHeaders().put(name, def);
+		return this;
+	}
 }

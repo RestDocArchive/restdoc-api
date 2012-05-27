@@ -96,4 +96,67 @@ public class MethodDefinition {
 		return this.examples;
 	}
 
+	// #############################################################
+	// nice builder methods
+	// #############################################################
+
+	/**
+	 * @param description
+	 * @return this
+	 */
+	public MethodDefinition description(String description) {
+		this.setDescription(description);
+		return this;
+	}
+
+	/**
+	 * @param code
+	 * @param description
+	 * @return this
+	 */
+	public MethodDefinition statusCode(String code, String description) {
+		this.getStatusCodes().put(code, description);
+		return this;
+	}
+
+	/**
+	 * @param type
+	 * @param schema
+	 * @return this
+	 */
+	public MethodDefinition accept(String type, String schema) {
+		this.getAccepts().add(new Representation(type, schema));
+		return this;
+	}
+
+	/**
+	 * @param name
+	 * @param description
+	 * @param required
+	 * @return this
+	 */
+	public MethodDefinition header(String name, String description, boolean required) {
+		final HeaderDefinition def = new HeaderDefinition(description, required);
+		this.getHeaders().put(name, def);
+		return this;
+	}
+
+	/**
+	 * @param response
+	 * @return this
+	 */
+	public MethodDefinition response(ResponseDefinition response) {
+		this.setResponse(response);
+		return this;
+	}
+
+	/**
+	 * @param exampleRequest
+	 * @return this
+	 */
+	public MethodDefinition example(ExampleRequest exampleRequest) {
+		this.getExamples().add(exampleRequest);
+		return this;
+	}
+
 }

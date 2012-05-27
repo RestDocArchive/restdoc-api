@@ -34,6 +34,22 @@ public class ExampleRequest {
 	private final Map<String, String> headers = new HashMap<String, String>();
 
 	/**
+	 * 
+	 */
+	public ExampleRequest() {
+		//
+	}
+
+	/**
+	 * @param path
+	 * @param body
+	 */
+	public ExampleRequest(String path, String body) {
+		this.path = path;
+		this.body = body;
+	}
+
+	/**
 	 * @return the path
 	 */
 	public String getPath() {
@@ -68,6 +84,20 @@ public class ExampleRequest {
 	 */
 	public Map<String, String> getHeaders() {
 		return this.headers;
+	}
+
+	// #############################################################
+	// nice builder methods
+	// #############################################################
+
+	/**
+	 * @param header
+	 * @param value
+	 * @return this
+	 */
+	public ExampleRequest header(String header, String value) {
+		this.getHeaders().put(header, value);
+		return this;
 	}
 
 }

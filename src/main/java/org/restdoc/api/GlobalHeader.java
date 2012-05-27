@@ -45,4 +45,32 @@ public class GlobalHeader {
 		return this.responseHeader;
 	}
 
+	// #############################################################
+	// nice builder methods
+	// #############################################################
+
+	/**
+	 * @param name
+	 * @param description
+	 * @param required
+	 * @return this
+	 */
+	public GlobalHeader request(String name, String description, boolean required) {
+		final HeaderDefinition def = new HeaderDefinition(description, required);
+		this.getRequestHeader().put(name, def);
+		return this;
+	}
+
+	/**
+	 * @param name
+	 * @param description
+	 * @param required
+	 * @return this
+	 */
+	public GlobalHeader response(String name, String description, boolean required) {
+		final HeaderDefinition def = new HeaderDefinition(description, required);
+		this.getResponseHeader().put(name, def);
+		return this;
+	}
+
 }

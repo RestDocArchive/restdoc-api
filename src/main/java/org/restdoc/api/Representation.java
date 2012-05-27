@@ -26,6 +26,22 @@ public class Representation {
 	private String schema;
 
 	/**
+	 * 
+	 */
+	public Representation() {
+		//
+	}
+
+	/**
+	 * @param type
+	 * @param schema
+	 */
+	public Representation(String type, String schema) {
+		this.type = type;
+		this.schema = schema;
+	}
+
+	/**
 	 * @return the type
 	 */
 	public String getType() {

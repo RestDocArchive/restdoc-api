@@ -26,6 +26,22 @@ public class ParamValidation {
 	private String pattern;
 
 	/**
+	 * 
+	 */
+	public ParamValidation() {
+		//
+	}
+
+	/**
+	 * @param type
+	 * @param pattern
+	 */
+	public ParamValidation(String type, String pattern) {
+		this.type = type;
+		this.pattern = pattern;
+	}
+
+	/**
 	 * @return the type
 	 */
 	public String getType() {

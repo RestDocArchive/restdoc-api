@@ -26,6 +26,29 @@ public class HeaderDefinition {
 	private boolean required = false;
 
 	/**
+	 * 
+	 */
+	public HeaderDefinition() {
+		//
+	}
+
+	/**
+	 * @param description
+	 */
+	public HeaderDefinition(String description) {
+		this(description, false);
+	}
+
+	/**
+	 * @param description
+	 * @param required
+	 */
+	public HeaderDefinition(String description, boolean required) {
+		this.description = description;
+		this.required = required;
+	}
+
+	/**
 	 * @return the description
 	 */
 	public String getDescription() {
