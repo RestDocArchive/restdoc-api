@@ -26,6 +26,11 @@ import org.codehaus.jackson.annotate.JsonPropertyOrder;
 @JsonPropertyOrder({ "schemas", "headers", "resources" })
 public class RestDoc {
 
+	/**
+	 * The RestDoc MediaType <i>application/x-restdoc+json</i>
+	 */
+	public static final String RESTDOC_MEDIATYPE = "application/x-restdoc+json";
+
 	@JsonProperty("schemas")
 	private HashMap<String, Schema> schemas = new HashMap<String, Schema>();
 
