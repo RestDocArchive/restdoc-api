@@ -36,7 +36,7 @@ public class ParamValidation {
 	 * @param type
 	 * @param pattern
 	 */
-	public ParamValidation(String type, String pattern) {
+	public ParamValidation(final String type, final String pattern) {
 		this.type = type;
 		this.pattern = pattern;
 	}
@@ -52,7 +52,7 @@ public class ParamValidation {
 	 * @param type
 	 *            the type to set
 	 */
-	public void setType(String type) {
+	public void setType(final String type) {
 		this.type = type;
 	}
 
@@ -67,7 +67,7 @@ public class ParamValidation {
 	 * @param pattern
 	 *            the pattern to set
 	 */
-	public void setPattern(String pattern) {
+	public void setPattern(final String pattern) {
 		this.pattern = pattern;
 	}
 

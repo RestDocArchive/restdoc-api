@@ -1,133 +1,117 @@
 {
-	// Headers can be described at the server level and/or per-method
-	"headers" : {
-		"request" : {
-			"Authorization" : {
-				"description" : "This server uses a custom authentication scheme. See http://myapi.com/docs/auth",
-				"required" : true
-			}
-		},
-		"response" : {
-			"X-RateLimit-Total" : {
-				"description" : "The number of API calls allowed per-hour"
-			},
-			"X-RateLimit-Remaining" : {
-				"description" : "Number of requests remaining until next refill"
-			},
-			"X-RateLimit-Reset" : {
-				"description" : "The time at which X-RateLimit-Remaining will be reset back to X-RateLimit-Total"
-			}
-		}
-	},
-	"resources" : [{
-			"id" : "LocalizedMessage",
-			"description" : "A localized message",
-			"path" : "/{language}/{messageId}{?seasonal}", // representing query params with L3 URI templates
-			"params" : { // URI parameters descriptions
-				"locale" : {
-					"description" : "A standard locale string, e.g. 5c7484931b91a4b027e829bcb9473c7ca701392bquot;en_US.utf-85c7484931b91a4b027e829bcb9473c7ca701392bquot;",
-					"validations" : [{
-							"type" : "match",
-							"pattern" : "[a-z]+(_[A-Z]+)?(\\.[a-z-]+)?"
-						}
-					]
-				},
-				"messageId" : {
-					"description" : "A free-form message string",
-					"validations" : [{
-							"type" : "match",
-							"pattern" : "[a-z_]+"
-						}
-					]
-				},
-				"seasonal" : {
-					"description" : "Whether the message is seasonal.",
-					"validations" : [{
-							"type" : "match",
-							"pattern" : "^(true|false|yes|no)$"
-						}
-					]
-				}
-			},
-			"methods" : {
-				"PUT" : {
-					"description" : "Update or create a message",
-					"statusCodes" : { "201": "Created" },
-					"accepts" : [// Representations accepted by the method on this resource.
-						{
-							"type" : "text/plain"
-						}, {
-							"type" : "application/json",
-							"schema" : "http://some.json/schema"
-						}
-					],
-					"headers" : { // Request headers only, response headers are defined under 'response'
-						"X-User-Token" : {
-							"description" : "Used to identify the user creating the message"
-						}
-					},
-					"response" : { // Response representations this resource/method provides
-						"types" : [{
-								"type" : "text/plain"
-							}, {
-								"type" : "application/json",
-								"schema" : "http://my.json/schema"
-							}, {
-								"type" : "application/xml",
-								"schema" : "http://my.xml/dtd"
-							}
-						],
-						"headers" : {
-							"X-What-Response-Header-Would-Only-Show-Up-For-One-Resource?" : {}
-						}
-					},
-					"examples" : [{
-							"path" : "/en_US/greeting",
-							"body" : "Hello, world!"
-						}, {
-							"path" : "/en_US/greeting",
-							"headers" : {
-								"content-type" : "application/json"
-							},
-							"body" : "{\"message\":\"Hello, world!\"}!" // Should bodies *always* be strings?
-						}, {
-							"path" : "/en_US/greeting",
-							"headers" : {
-								"content-type" : "application/xml"
-							},
-							"body" : "<message>Hello, world</message>"
-						}
-					]
-				},
-				"GET" : {
-					"description" : "Retrieve a message",
-					"statusCodes": { 
-			             "200": "Message retrieved successfully", 
-            			 "401": "Parameter error"
-          			},
-					"accepts" : []// Explicitly indicate that this method takes no request body.
-				}
-			}
-		}, {
-			// This resource has no human-readable documentation, but still provides some info on how to use it.
-			"id" : "FallbackLocale",
-			"methods" : {
-				"GET" : {
-					"statusCodes": { "200": "OK" }
-				},
-				"PUT" : {
-					"statusCodes": { "201": "Created" }
-				}
-			},
-			"params" : {
-				"locale" : {
-					"validations" : [{
-							"type" : "match",
-							"pattern" : "[a-z]+(_[A-Z]+)?(\\.[a-z-]+)?"
-						}
-					]
-				}
-			}
-		}
-	]
+  "schemas" : {
+    "http://some.json/msg" : {
+      "type" : "inline",
+      "schema" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string"
+          },
+          "content" : {
+            "type" : "string"
+          }
+        }
+      }
+    }
+  },
+  // Headers can be described at the server level and/or per-method
+  "headers": {
+    "request": {
+      "Authorization": {
+        "description": "This server uses a custom authentication scheme. See http://myapi.com/docs/auth",
+        "required": true
+      }
+    },
+    "response": {
+      "X-RateLimit-Total": {
+        "description": "The number of API calls allowed per-hour"
+      },
+      "X-RateLimit-Remaining": {
+        "description": "Number of requests remaining until next refill"
+      },
+      "X-RateLimit-Reset": {
+        "description": "The time at which X-RateLimit-Remaining will be reset back to X-RateLimit-Total"
+      }
+    }
+  },
+  "resources": [
+    {
+      "id": "LocalizedMessage",
+      "description": "A localized message",
+      "path": "/{locale}/{messageId}{?seasonal}", // representing query params with L3 URI templates
+      "params": { // URI parameters descriptions
+        "locale": {
+          "description": "A standard locale string, e.g. \"en_US.utf-8\"",
+          "validations": [ { "type": "match", "pattern": "[a-z]+(_[A-Z]+)?(\\\\.[a-z-]+)?" } ]
+        },
+        "messageId": {
+          "description": "A free-form message string",
+          "validations": [ { "type": "match", "pattern": "[a-z_]+" } ]
+        },
+        "seasonal": {
+          "description": "Whether the message is seasonal.",
+          "validations": [ { "type": "match", "pattern": "^(true|false|yes|no)$" } ]
+        }
+      },
+      "methods": {
+        "PUT": {
+          "description": "Update or create a message",
+          "statusCodes": { "201": "Created" },
+          "accepts": [   // Representations accepted by the method on this resource.
+            { "type": "text/plain" },
+            { "type": "application/json", "schema": "http://some.json/msg" }
+          ],
+          "headers": { // Request headers only, response headers are defined under 'response'
+            "X-User-Token": {
+              "description": "Used to identify the user creating the message"
+            }
+          },
+          "response": { // Response representations this resource/method provides
+            "types": [
+              { "type": "text/plain" },
+              { "type": "application/json", "schema": "http://some.json/msg" }
+            ],
+            "headers": {
+              "Location": {
+			    "description": "The URL of the created message"
+			  }
+            }
+          },
+          "examples": [
+            {
+              "path": "/en_US/greeting",
+              "body": "Hello, world!"
+            },
+            {
+              "path": "/en_US/greeting",
+              "headers": {"Content-Type": "application/json"},
+              "body": "{\"id\":\"greeting\",\"content\":\"Hello, world!\"}!"
+            }
+          ]
+        },
+        "GET": {
+          "description": "Retrieve a message",
+          "statusCodes": { 
+             "200": "Message retrieved successfully", 
+             "404": "Message not found"
+          }
+        }
+      }
+    },
+    {
+      // This resource has no human-readable documentation, but still provides some info on how to use it.
+      "id": "FallbackLocale",
+	  "path": "/fallback/{locale}",
+      "params": {
+        "locale": { 
+          "validations": [ { "type": "match", "pattern": "[a-z]+(_[A-Z]+)?(\\\\.[a-z-]+)?" } ]
+        }
+      },
+      "methods": {
+        "GET": { "statusCodes": { "200": "OK" } },
+        "PUT": { "statusCodes": { "201": "Created" } }
+      }
+    }
+  ]
 }

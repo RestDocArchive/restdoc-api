@@ -46,7 +46,7 @@ public class RestResource {
 	 * @param id
 	 *            the id to set
 	 */
-	public void setId(String id) {
+	public void setId(final String id) {
 		this.id = id;
 	}
 
@@ -61,7 +61,7 @@ public class RestResource {
 	 * @param description
 	 *            the description to set
 	 */
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
@@ -76,7 +76,7 @@ public class RestResource {
 	 * @param path
 	 *            the path to set
 	 */
-	public void setPath(String path) {
+	public void setPath(final String path) {
 		this.path = path;
 	}
 
@@ -102,7 +102,7 @@ public class RestResource {
 	 * @param id
 	 * @return this
 	 */
-	public RestResource id(String id) {
+	public RestResource id(final String id) {
 		this.setId(id);
 		return this;
 	}
@@ -111,7 +111,7 @@ public class RestResource {
 	 * @param description
 	 * @return this
 	 */
-	public RestResource description(String description) {
+	public RestResource description(final String description) {
 		this.setDescription(description);
 		return this;
 	}
@@ -120,7 +120,7 @@ public class RestResource {
 	 * @param path
 	 * @return this
 	 */
-	public RestResource path(String path) {
+	public RestResource path(final String path) {
 		this.setPath(path);
 		return this;
 	}
@@ -131,7 +131,7 @@ public class RestResource {
 	 * @param validations
 	 * @return this
 	 */
-	public RestResource param(String name, String description, ParamValidation... validations) {
+	public RestResource param(final String name, final String description, final ParamValidation... validations) {
 		final ParamDefinition def = new ParamDefinition();
 		def.setDescription(description);
 		def.getValidations().addAll(Arrays.asList(validations));
@@ -144,7 +144,7 @@ public class RestResource {
 	 * @param method
 	 * @return this
 	 */
-	public RestResource method(String verb, MethodDefinition method) {
+	public RestResource method(final String verb, final MethodDefinition method) {
 		this.getMethods().put(verb, method);
 		return this;
 	}

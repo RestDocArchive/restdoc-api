@@ -35,7 +35,7 @@ public class HeaderDefinition {
 	/**
 	 * @param description
 	 */
-	public HeaderDefinition(String description) {
+	public HeaderDefinition(final String description) {
 		this(description, false);
 	}
 
@@ -43,7 +43,7 @@ public class HeaderDefinition {
 	 * @param description
 	 * @param required
 	 */
-	public HeaderDefinition(String description, boolean required) {
+	public HeaderDefinition(final String description, final boolean required) {
 		this.description = description;
 		this.required = required;
 	}
@@ -59,7 +59,7 @@ public class HeaderDefinition {
 	 * @param description
 	 *            the description to set
 	 */
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
@@ -74,7 +74,7 @@ public class HeaderDefinition {
 	 * @param required
 	 *            the required to set
 	 */
-	public void setRequired(boolean required) {
+	public void setRequired(final boolean required) {
 		this.required = required;
 	}
 

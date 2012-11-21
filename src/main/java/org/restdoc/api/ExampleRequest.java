@@ -44,7 +44,7 @@ public class ExampleRequest {
 	 * @param path
 	 * @param body
 	 */
-	public ExampleRequest(String path, String body) {
+	public ExampleRequest(final String path, final String body) {
 		this.path = path;
 		this.body = body;
 	}
@@ -60,7 +60,7 @@ public class ExampleRequest {
 	 * @param path
 	 *            the path to set
 	 */
-	public void setPath(String path) {
+	public void setPath(final String path) {
 		this.path = path;
 	}
 
@@ -75,7 +75,7 @@ public class ExampleRequest {
 	 * @param body
 	 *            the body to set
 	 */
-	public void setBody(String body) {
+	public void setBody(final String body) {
 		this.body = body;
 	}
 
@@ -95,7 +95,7 @@ public class ExampleRequest {
 	 * @param value
 	 * @return this
 	 */
-	public ExampleRequest header(String header, String value) {
+	public ExampleRequest header(final String header, final String value) {
 		this.getHeaders().put(header, value);
 		return this;
 	}

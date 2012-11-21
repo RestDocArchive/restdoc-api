@@ -55,7 +55,7 @@ public class GlobalHeader {
 	 * @param required
 	 * @return this
 	 */
-	public GlobalHeader request(String name, String description, boolean required) {
+	public GlobalHeader request(final String name, final String description, final boolean required) {
 		final HeaderDefinition def = new HeaderDefinition(description, required);
 		this.getRequestHeader().put(name, def);
 		return this;
@@ -67,7 +67,7 @@ public class GlobalHeader {
 	 * @param required
 	 * @return this
 	 */
-	public GlobalHeader response(String name, String description, boolean required) {
+	public GlobalHeader response(final String name, final String description, final boolean required) {
 		final HeaderDefinition def = new HeaderDefinition(description, required);
 		this.getResponseHeader().put(name, def);
 		return this;

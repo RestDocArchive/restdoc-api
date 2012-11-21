@@ -51,7 +51,7 @@ public class RestDoc {
 	 * @param headers
 	 *            the headers to set
 	 */
-	public void setHeaders(GlobalHeader headers) {
+	public void setHeaders(final GlobalHeader headers) {
 		this.headers = headers;
 	}
 
@@ -66,7 +66,7 @@ public class RestDoc {
 	 * @param resources
 	 *            the resources to set
 	 */
-	public void setResources(Collection<RestResource> resources) {
+	public void setResources(final Collection<RestResource> resources) {
 		this.resources = resources;
 	}
 
@@ -81,7 +81,7 @@ public class RestDoc {
 	 * @param schemas
 	 *            the schemas to set
 	 */
-	public void setSchemas(HashMap<String, Schema> schemas) {
+	public void setSchemas(final HashMap<String, Schema> schemas) {
 		this.schemas = schemas;
 	}
 

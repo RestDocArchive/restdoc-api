@@ -36,7 +36,7 @@ public class Representation {
 	 * @param type
 	 * @param schema
 	 */
-	public Representation(String type, String schema) {
+	public Representation(final String type, final String schema) {
 		this.type = type;
 		this.schema = schema;
 	}
@@ -52,7 +52,7 @@ public class Representation {
 	 * @param type
 	 *            the type to set
 	 */
-	public void setType(String type) {
+	public void setType(final String type) {
 		this.type = type;
 	}
 
@@ -67,7 +67,7 @@ public class Representation {
 	 * @param schema
 	 *            the schema to set
 	 */
-	public void setSchema(String schema) {
+	public void setSchema(final String schema) {
 		this.schema = schema;
 	}
 

@@ -49,7 +49,7 @@ public class MethodDefinition {
 	 * @param description
 	 *            the description to set
 	 */
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 
@@ -71,7 +71,7 @@ public class MethodDefinition {
 	 * @param response
 	 *            the response to set
 	 */
-	public void setResponse(ResponseDefinition response) {
+	public void setResponse(final ResponseDefinition response) {
 		this.response = response;
 	}
 
@@ -104,7 +104,7 @@ public class MethodDefinition {
 	 * @param description
 	 * @return this
 	 */
-	public MethodDefinition description(String description) {
+	public MethodDefinition description(final String description) {
 		this.setDescription(description);
 		return this;
 	}
@@ -114,7 +114,7 @@ public class MethodDefinition {
 	 * @param description
 	 * @return this
 	 */
-	public MethodDefinition statusCode(String code, String description) {
+	public MethodDefinition statusCode(final String code, final String description) {
 		this.getStatusCodes().put(code, description);
 		return this;
 	}
@@ -124,7 +124,7 @@ public class MethodDefinition {
 	 * @param schema
 	 * @return this
 	 */
-	public MethodDefinition accept(String type, String schema) {
+	public MethodDefinition accept(final String type, final String schema) {
 		this.getAccepts().add(new Representation(type, schema));
 		return this;
 	}
@@ -135,7 +135,7 @@ public class MethodDefinition {
 	 * @param required
 	 * @return this
 	 */
-	public MethodDefinition header(String name, String description, boolean required) {
+	public MethodDefinition header(final String name, final String description, final boolean required) {
 		final HeaderDefinition def = new HeaderDefinition(description, required);
 		this.getHeaders().put(name, def);
 		return this;
@@ -145,7 +145,7 @@ public class MethodDefinition {
 	 * @param response
 	 * @return this
 	 */
-	public MethodDefinition response(ResponseDefinition response) {
+	public MethodDefinition response(final ResponseDefinition response) {
 		this.setResponse(response);
 		return this;
 	}
@@ -154,7 +154,7 @@ public class MethodDefinition {
 	 * @param exampleRequest
 	 * @return this
 	 */
-	public MethodDefinition example(ExampleRequest exampleRequest) {
+	public MethodDefinition example(final ExampleRequest exampleRequest) {
 		this.getExamples().add(exampleRequest);
 		return this;
 	}

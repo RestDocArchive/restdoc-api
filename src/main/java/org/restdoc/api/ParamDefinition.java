@@ -38,7 +38,7 @@ public class ParamDefinition {
 	/**
 	 * @param description
 	 */
-	public ParamDefinition(String description) {
+	public ParamDefinition(final String description) {
 		this.description = description;
 	}
 
@@ -53,7 +53,7 @@ public class ParamDefinition {
 	 * @param description
 	 *            the description to set
 	 */
-	public void setDescription(String description) {
+	public void setDescription(final String description) {
 		this.description = description;
 	}
 

@@ -53,7 +53,7 @@ public class ResponseDefinition {
 	 * @param schema
 	 * @return this
 	 */
-	public ResponseDefinition type(String type, String schema) {
+	public ResponseDefinition type(final String type, final String schema) {
 		final Representation def = new Representation();
 		def.setSchema(schema);
 		def.setType(type);
@@ -67,7 +67,7 @@ public class ResponseDefinition {
 	 * @param required
 	 * @return this
 	 */
-	public ResponseDefinition header(String name, String description, boolean required) {
+	public ResponseDefinition header(final String name, final String description, final boolean required) {
 		final HeaderDefinition def = new HeaderDefinition(description, required);
 		this.getHeaders().put(name, def);
 		return this;

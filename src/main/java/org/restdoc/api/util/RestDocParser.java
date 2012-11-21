@@ -13,8 +13,10 @@
 package org.restdoc.api.util;
 
 import java.io.File;
+import java.io.IOException;
 import java.io.InputStream;
 
+import org.codehaus.jackson.map.DeserializationConfig;
 import org.codehaus.jackson.map.ObjectMapper;
 import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
 import org.restdoc.api.RestDoc;
@@ -28,55 +30,40 @@ public class RestDocParser {
 	/**
 	 * @param json
 	 * @return the {@link RestDoc}
+	 * @throws IOException
 	 */
-	public static RestDoc parseString(String json) {
-		try {
-			return RestDocParser.createMapper().readValue(json, RestDoc.class);
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+	public static RestDoc parseString(final String json) throws IOException {
+		return RestDocParser.createMapper().readValue(json, RestDoc.class);
 	}
 
 	/**
 	 * @param json
 	 * @return the {@link RestDoc}
+	 * @throws IOException
 	 */
-	public static RestDoc parseFile(File json) {
-		try {
-			return RestDocParser.createMapper().readValue(json, RestDoc.class);
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+	public static RestDoc parseFile(final File json) throws IOException {
+		return RestDocParser.createMapper().readValue(json, RestDoc.class);
 	}
 
 	/**
 	 * @param name
 	 * @return the {@link RestDoc}
+	 * @throws IOException
 	 */
-	public static RestDoc parseResource(String name) {
-		try {
-			final InputStream stream = RestDocParser.class.getResourceAsStream(name);
-			return RestDocParser.createMapper().readValue(stream, RestDoc.class);
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+	@SuppressWarnings("resource")
+	public static RestDoc parseResource(final String name) throws IOException {
+		final InputStream stream = RestDocParser.class.getResourceAsStream(name);
+		return RestDocParser.createMapper().readValue(stream, RestDoc.class);
 	}
 
 	/**
 	 * @param doc
 	 *            the {@link RestDoc} object
 	 * @return the JSON String
+	 * @throws IOException
 	 */
-	public static String writeRestDoc(RestDoc doc) {
-		try {
-			return RestDocParser.createMapper().writeValueAsString(doc);
-		} catch (final Exception e) {
-			e.printStackTrace();
-		}
-		return null;
+	public static String writeRestDoc(final RestDoc doc) throws IOException {
+		return RestDocParser.createMapper().writeValueAsString(doc);
 	}
 
 	/**
@@ -84,7 +71,11 @@ public class RestDocParser {
 	 */
 	public static ObjectMapper createMapper() {
 		final ObjectMapper mapper = new ObjectMapper();
+		// Allow comments in JSON
 		mapper.configure(org.codehaus.jackson.JsonParser.Feature.ALLOW_COMMENTS, true);
+		// Allow unknown properties for extensibility
+		mapper.disable(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES);
+		// Include only non-null values
 		mapper.setSerializationInclusion(Inclusion.NON_NULL);
 
 		return mapper;

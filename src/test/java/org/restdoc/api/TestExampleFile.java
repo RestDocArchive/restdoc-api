@@ -12,6 +12,8 @@
  */
 package org.restdoc.api;
 
+import java.io.IOException;
+
 import org.junit.Test;
 import org.restdoc.api.util.RestDocParser;
 
@@ -22,10 +24,11 @@ import org.restdoc.api.util.RestDocParser;
 public class TestExampleFile {
 
 	/**
-	 * 
+	 * @throws IOException
+	 *             on parse errors
 	 */
 	@Test
-	public void parse() {
+	public void parse() throws IOException {
 		final RestDoc doc = RestDocParser.parseResource("/DemoAPI.json");
 		System.out.println(RestDocParser.writeRestDoc(doc));
 	}

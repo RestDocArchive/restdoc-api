@@ -39,7 +39,7 @@ public class Schema {
 	 * @param type
 	 *            the type to set
 	 */
-	public void setType(String type) {
+	public void setType(final String type) {
 		this.type = type;
 	}
 
@@ -54,7 +54,7 @@ public class Schema {
 	 * @param url
 	 *            the url to set
 	 */
-	public void setUrl(String url) {
+	public void setUrl(final String url) {
 		this.url = url;
 	}
 
@@ -69,7 +69,7 @@ public class Schema {
 	 * @param schema
 	 *            the schema to set
 	 */
-	public void setSchema(JsonSchema schema) {
+	public void setSchema(final JsonSchema schema) {
 		this.schema = schema;
 	}
 
@@ -81,7 +81,7 @@ public class Schema {
 	 * @param schema
 	 * @return this
 	 */
-	public Schema schema(JsonSchema schema) {
+	public Schema schema(final JsonSchema schema) {
 		this.setType("inline");
 		this.setSchema(schema);
 		return this;
@@ -91,7 +91,7 @@ public class Schema {
 	 * @param url
 	 * @return this
 	 */
-	public Schema url(String url) {
+	public Schema url(final String url) {
 		this.setType("url");
 		this.setUrl(url);
 		return this;
