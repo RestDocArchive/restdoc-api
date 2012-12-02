@@ -22,7 +22,7 @@ import org.codehaus.jackson.annotate.JsonPropertyOrder;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "path", "body", "headers" })
+@JsonPropertyOrder({ "path", "headers", "body" })
 public class ExampleRequest {
 
 	@JsonProperty("path")

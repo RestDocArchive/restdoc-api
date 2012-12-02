@@ -74,8 +74,8 @@
             ],
             "headers": {
               "Location": {
-			    "description": "The URL of the created message"
-			  }
+                "description": "The URL of the created message"
+              }
             }
           },
           "examples": [
@@ -102,7 +102,7 @@
     {
       // This resource has no human-readable documentation, but still provides some info on how to use it.
       "id": "FallbackLocale",
-	  "path": "/fallback/{locale}",
+      "path": "/fallback/{locale}",
       "params": {
         "locale": { 
           "validations": [ { "type": "match", "pattern": "[a-z]+(_[A-Z]+)?(\\\\.[a-z-]+)?" } ]
