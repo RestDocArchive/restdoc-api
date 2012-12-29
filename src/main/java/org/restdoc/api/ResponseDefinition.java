@@ -49,27 +49,27 @@ public class ResponseDefinition {
 	// #############################################################
 
 	/**
-	 * @param type
-	 * @param schema
+	 * @param _type
+	 * @param _schema
 	 * @return this
 	 */
-	public ResponseDefinition type(final String type, final String schema) {
+	public ResponseDefinition type(final String _type, final String _schema) {
 		final Representation def = new Representation();
-		def.setSchema(schema);
-		def.setType(type);
+		def.setSchema(_schema);
+		def.setType(_type);
 		this.getTypes().add(def);
 		return this;
 	}
 
 	/**
-	 * @param name
-	 * @param description
-	 * @param required
+	 * @param _name
+	 * @param _description
+	 * @param _required
 	 * @return this
 	 */
-	public ResponseDefinition header(final String name, final String description, final boolean required) {
-		final HeaderDefinition def = new HeaderDefinition(description, required);
-		this.getHeaders().put(name, def);
+	public ResponseDefinition header(final String _name, final String _description, final boolean _required) {
+		final HeaderDefinition def = new HeaderDefinition(_description, _required);
+		this.getHeaders().put(_name, def);
 		return this;
 	}
 }

@@ -101,61 +101,61 @@ public class MethodDefinition {
 	// #############################################################
 
 	/**
-	 * @param description
+	 * @param _description
 	 * @return this
 	 */
-	public MethodDefinition description(final String description) {
-		this.setDescription(description);
+	public MethodDefinition description(final String _description) {
+		this.setDescription(_description);
 		return this;
 	}
 
 	/**
-	 * @param code
-	 * @param description
+	 * @param _code
+	 * @param _description
 	 * @return this
 	 */
-	public MethodDefinition statusCode(final String code, final String description) {
-		this.getStatusCodes().put(code, description);
+	public MethodDefinition statusCode(final String _code, final String _description) {
+		this.getStatusCodes().put(_code, _description);
 		return this;
 	}
 
 	/**
-	 * @param type
-	 * @param schema
+	 * @param _type
+	 * @param _schema
 	 * @return this
 	 */
-	public MethodDefinition accept(final String type, final String schema) {
-		this.getAccepts().add(new Representation(type, schema));
+	public MethodDefinition accept(final String _type, final String _schema) {
+		this.getAccepts().add(new Representation(_type, _schema));
 		return this;
 	}
 
 	/**
-	 * @param name
-	 * @param description
-	 * @param required
+	 * @param _name
+	 * @param _description
+	 * @param _required
 	 * @return this
 	 */
-	public MethodDefinition header(final String name, final String description, final boolean required) {
-		final HeaderDefinition def = new HeaderDefinition(description, required);
-		this.getHeaders().put(name, def);
+	public MethodDefinition header(final String _name, final String _description, final boolean _required) {
+		final HeaderDefinition def = new HeaderDefinition(_description, _required);
+		this.getHeaders().put(_name, def);
 		return this;
 	}
 
 	/**
-	 * @param response
+	 * @param _response
 	 * @return this
 	 */
-	public MethodDefinition response(final ResponseDefinition response) {
-		this.setResponse(response);
+	public MethodDefinition response(final ResponseDefinition _response) {
+		this.setResponse(_response);
 		return this;
 	}
 
 	/**
-	 * @param exampleRequest
+	 * @param _exampleRequest
 	 * @return this
 	 */
-	public MethodDefinition example(final ExampleRequest exampleRequest) {
-		this.getExamples().add(exampleRequest);
+	public MethodDefinition example(final ExampleRequest _exampleRequest) {
+		this.getExamples().add(_exampleRequest);
 		return this;
 	}
 

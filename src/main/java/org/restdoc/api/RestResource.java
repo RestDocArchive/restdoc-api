@@ -99,43 +99,43 @@ public class RestResource {
 	// #############################################################
 
 	/**
-	 * @param id
+	 * @param _id
 	 * @return this
 	 */
-	public RestResource id(final String id) {
-		this.setId(id);
+	public RestResource id(final String _id) {
+		this.setId(_id);
 		return this;
 	}
 
 	/**
-	 * @param description
+	 * @param _description
 	 * @return this
 	 */
-	public RestResource description(final String description) {
-		this.setDescription(description);
+	public RestResource description(final String _description) {
+		this.setDescription(_description);
 		return this;
 	}
 
 	/**
-	 * @param path
+	 * @param _path
 	 * @return this
 	 */
-	public RestResource path(final String path) {
-		this.setPath(path);
+	public RestResource path(final String _path) {
+		this.setPath(_path);
 		return this;
 	}
 
 	/**
-	 * @param name
-	 * @param description
-	 * @param validations
+	 * @param _name
+	 * @param _description
+	 * @param _validations
 	 * @return this
 	 */
-	public RestResource param(final String name, final String description, final ParamValidation... validations) {
+	public RestResource param(final String _name, final String _description, final ParamValidation... _validations) {
 		final ParamDefinition def = new ParamDefinition();
-		def.setDescription(description);
-		def.getValidations().addAll(Arrays.asList(validations));
-		this.getParams().put(name, def);
+		def.setDescription(_description);
+		def.getValidations().addAll(Arrays.asList(_validations));
+		this.getParams().put(_name, def);
 		return this;
 	}
 

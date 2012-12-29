@@ -25,7 +25,11 @@ import org.restdoc.api.RestDoc;
  * @author hoegertn
  * 
  */
-public class RestDocParser {
+public final class RestDocParser {
+
+	private RestDocParser() {
+		//
+	}
 
 	/**
 	 * @param json

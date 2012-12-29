@@ -78,22 +78,22 @@ public class Schema {
 	// #############################################################
 
 	/**
-	 * @param schema
+	 * @param _schema
 	 * @return this
 	 */
-	public Schema schema(final JsonSchema schema) {
+	public Schema schema(final JsonSchema _schema) {
 		this.setType("inline");
-		this.setSchema(schema);
+		this.setSchema(_schema);
 		return this;
 	}
 
 	/**
-	 * @param url
+	 * @param _url
 	 * @return this
 	 */
-	public Schema url(final String url) {
+	public Schema url(final String _url) {
 		this.setType("url");
-		this.setUrl(url);
+		this.setUrl(_url);
 		return this;
 	}
 }

@@ -91,12 +91,12 @@ public class ExampleRequest {
 	// #############################################################
 
 	/**
-	 * @param header
-	 * @param value
+	 * @param _header
+	 * @param _value
 	 * @return this
 	 */
-	public ExampleRequest header(final String header, final String value) {
-		this.getHeaders().put(header, value);
+	public ExampleRequest header(final String _header, final String _value) {
+		this.getHeaders().put(_header, _value);
 		return this;
 	}
 

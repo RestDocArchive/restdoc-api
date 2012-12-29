@@ -50,26 +50,26 @@ public class GlobalHeader {
 	// #############################################################
 
 	/**
-	 * @param name
-	 * @param description
-	 * @param required
+	 * @param _name
+	 * @param _description
+	 * @param _required
 	 * @return this
 	 */
-	public GlobalHeader request(final String name, final String description, final boolean required) {
-		final HeaderDefinition def = new HeaderDefinition(description, required);
-		this.getRequestHeader().put(name, def);
+	public GlobalHeader request(final String _name, final String _description, final boolean _required) {
+		final HeaderDefinition def = new HeaderDefinition(_description, _required);
+		this.getRequestHeader().put(_name, def);
 		return this;
 	}
 
 	/**
-	 * @param name
-	 * @param description
-	 * @param required
+	 * @param _name
+	 * @param _description
+	 * @param _required
 	 * @return this
 	 */
-	public GlobalHeader response(final String name, final String description, final boolean required) {
-		final HeaderDefinition def = new HeaderDefinition(description, required);
-		this.getResponseHeader().put(name, def);
+	public GlobalHeader response(final String _name, final String _description, final boolean _required) {
+		final HeaderDefinition def = new HeaderDefinition(_description, _required);
+		this.getResponseHeader().put(_name, def);
 		return this;
 	}
 
