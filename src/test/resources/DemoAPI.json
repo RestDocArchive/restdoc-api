@@ -33,7 +33,8 @@
       "X-RateLimit-Reset": {
         "description": "The time at which X-RateLimit-Remaining will be reset back to X-RateLimit-Total"
       }
-    }
+    },
+    "extension":"true"
   },
   "resources": [
     {

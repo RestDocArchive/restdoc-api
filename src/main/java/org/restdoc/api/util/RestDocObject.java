@@ -15,11 +15,14 @@
  */
 package org.restdoc.api.util;
 
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.util.HashMap;
 import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonAnyGetter;
 import org.codehaus.jackson.annotate.JsonAnySetter;
+import org.codehaus.jackson.annotate.JsonIgnore;
 
 /**
  * @author hoegertn
@@ -48,6 +51,51 @@ public class RestDocObject {
 	@JsonAnySetter
 	public void setAdditionalField(final String key, final Object value) {
 		this.additionalFields.put(key, value);
+	}
+
+	/**
+	 * @param fieldName
+	 * @return the value as Object
+	 */
+	@JsonIgnore
+	public Object getAdditionalField(final String fieldName) {
+		return this.additionalFields.get(fieldName);
+	}
+
+	/**
+	 * @param fieldName
+	 * @return the value as String
+	 */
+	@JsonIgnore
+	public String getAdditionalString(final String fieldName) {
+		return this.getAdditionalField(fieldName).toString();
+	}
+
+	/**
+	 * @param fieldName
+	 * @return the value as Number
+	 * @throws ParseException
+	 */
+	@JsonIgnore
+	public Number getAdditionalNumber(final String fieldName) throws ParseException {
+		final Object object = this.getAdditionalField(fieldName);
+		if (object instanceof Number) {
+			return (Number) object;
+		}
+		return NumberFormat.getInstance().parse(object.toString());
+	}
+
+	/**
+	 * @param fieldName
+	 * @return the value as Boolean
+	 */
+	@JsonIgnore
+	public Boolean getAdditionalBoolean(final String fieldName) {
+		final Object object = this.getAdditionalField(fieldName);
+		if (object instanceof Boolean) {
+			return (Boolean) object;
+		}
+		return Boolean.valueOf(object.toString());
 	}
 
 }

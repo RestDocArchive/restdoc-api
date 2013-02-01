@@ -31,6 +31,7 @@ public class TestExampleFile {
 	public void parse() throws IOException {
 		final RestDoc doc = RestDocParser.parseResource("/DemoAPI.json");
 		System.out.println(RestDocParser.writeRestDoc(doc));
+		System.out.println(doc.getHeaders().getAdditionalBoolean("extension"));
 	}
 
 }
