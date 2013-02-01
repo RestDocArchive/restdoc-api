@@ -17,13 +17,14 @@ import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "path", "headers", "body" })
-public class ExampleRequest {
+public class ExampleRequest extends RestDocObject {
 
 	@JsonProperty("path")
 	private String path;

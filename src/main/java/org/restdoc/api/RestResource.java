@@ -17,13 +17,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "id", "description", "path", "params", "methods" })
-public class RestResource {
+public class RestResource extends RestDocObject {
 
 	private String id;
 

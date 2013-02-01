@@ -13,13 +13,14 @@
 package org.restdoc.api;
 
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "description", "required" })
-public class HeaderDefinition {
+public class HeaderDefinition extends RestDocObject {
 
 	private String description = "";
 

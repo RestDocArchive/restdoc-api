@@ -14,13 +14,14 @@ package org.restdoc.api;
 
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
 import org.codehaus.jackson.schema.JsonSchema;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "type", "url", "schema" })
-public class Schema {
+public class Schema extends RestDocObject {
 
 	private String type = "inline";
 

@@ -18,13 +18,14 @@ import java.util.HashMap;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "schemas", "headers", "resources" })
-public class RestDoc {
+public class RestDoc extends RestDocObject {
 
 	/**
 	 * The RestDoc MediaType <i>application/x-restdoc+json</i>

@@ -17,13 +17,14 @@ import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonProperty;
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "request", "response" })
-public class GlobalHeader {
+public class GlobalHeader extends RestDocObject {
 
 	@JsonProperty("request")
 	private final Map<String, HeaderDefinition> requestHeader = new HashMap<String, HeaderDefinition>();

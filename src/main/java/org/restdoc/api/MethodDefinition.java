@@ -18,13 +18,14 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "description", "statusCodes", "accepts", "headers", "response", "examples" })
-public class MethodDefinition {
+public class MethodDefinition extends RestDocObject {
 
 	private String description;
 

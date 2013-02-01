@@ -13,13 +13,14 @@
 package org.restdoc.api;
 
 import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import org.restdoc.api.util.RestDocObject;
 
 /**
  * @author hoegertn
  * 
  */
 @JsonPropertyOrder({ "type", "pattern" })
-public class ParamValidation {
+public class ParamValidation extends RestDocObject {
 
 	private String type;
 
