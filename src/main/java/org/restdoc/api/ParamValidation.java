@@ -19,20 +19,21 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "type", "pattern" })
+@JsonPropertyOrder({"type", "pattern"})
 public class ParamValidation extends RestDocObject {
-
+	
 	private String type;
-
+	
 	private String pattern;
-
+	
+	
 	/**
 	 * 
 	 */
 	public ParamValidation() {
 		//
 	}
-
+	
 	/**
 	 * @param type
 	 * @param pattern
@@ -41,35 +42,33 @@ public class ParamValidation extends RestDocObject {
 		this.type = type;
 		this.pattern = pattern;
 	}
-
+	
 	/**
 	 * @return the type
 	 */
 	public String getType() {
 		return this.type;
 	}
-
+	
 	/**
-	 * @param type
-	 *            the type to set
+	 * @param type the type to set
 	 */
 	public void setType(final String type) {
 		this.type = type;
 	}
-
+	
 	/**
 	 * @return the pattern
 	 */
 	public String getPattern() {
 		return this.pattern;
 	}
-
+	
 	/**
-	 * @param pattern
-	 *            the pattern to set
+	 * @param pattern the pattern to set
 	 */
 	public void setPattern(final String pattern) {
 		this.pattern = pattern;
 	}
-
+	
 }

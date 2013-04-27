@@ -19,27 +19,28 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "description", "required" })
+@JsonPropertyOrder({"description", "required"})
 public class HeaderDefinition extends RestDocObject {
-
+	
 	private String description = "";
-
+	
 	private boolean required = false;
-
+	
+	
 	/**
 	 * 
 	 */
 	public HeaderDefinition() {
 		//
 	}
-
+	
 	/**
 	 * @param description
 	 */
 	public HeaderDefinition(final String description) {
 		this(description, false);
 	}
-
+	
 	/**
 	 * @param description
 	 * @param required
@@ -48,35 +49,33 @@ public class HeaderDefinition extends RestDocObject {
 		this.description = description;
 		this.required = required;
 	}
-
+	
 	/**
 	 * @return the description
 	 */
 	public String getDescription() {
 		return this.description;
 	}
-
+	
 	/**
-	 * @param description
-	 *            the description to set
+	 * @param description the description to set
 	 */
 	public void setDescription(final String description) {
 		this.description = description;
 	}
-
+	
 	/**
 	 * @return the required
 	 */
 	public boolean isRequired() {
 		return this.required;
 	}
-
+	
 	/**
-	 * @param required
-	 *            the required to set
+	 * @param required the required to set
 	 */
 	public void setRequired(final boolean required) {
 		this.required = required;
 	}
-
+	
 }

@@ -24,66 +24,64 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "schemas", "headers", "resources" })
+@JsonPropertyOrder({"schemas", "headers", "resources"})
 public class RestDoc extends RestDocObject {
-
+	
 	/**
 	 * The RestDoc MediaType <i>application/x-restdoc+json</i>
 	 */
 	public static final String RESTDOC_MEDIATYPE = "application/x-restdoc+json";
-
+	
 	@JsonProperty("schemas")
 	private HashMap<String, Schema> schemas = new HashMap<String, Schema>();
-
+	
 	@JsonProperty("headers")
 	private GlobalHeader headers = new GlobalHeader();
-
+	
 	@JsonProperty("resources")
 	private Collection<RestResource> resources = new ArrayList<RestResource>();
-
+	
+	
 	/**
 	 * @return the headers
 	 */
 	public GlobalHeader getHeaders() {
 		return this.headers;
 	}
-
+	
 	/**
-	 * @param headers
-	 *            the headers to set
+	 * @param headers the headers to set
 	 */
 	public void setHeaders(final GlobalHeader headers) {
 		this.headers = headers;
 	}
-
+	
 	/**
 	 * @return the resources
 	 */
 	public Collection<RestResource> getResources() {
 		return this.resources;
 	}
-
+	
 	/**
-	 * @param resources
-	 *            the resources to set
+	 * @param resources the resources to set
 	 */
 	public void setResources(final Collection<RestResource> resources) {
 		this.resources = resources;
 	}
-
+	
 	/**
 	 * @return the schemas
 	 */
 	public HashMap<String, Schema> getSchemas() {
 		return this.schemas;
 	}
-
+	
 	/**
-	 * @param schemas
-	 *            the schemas to set
+	 * @param schemas the schemas to set
 	 */
 	public void setSchemas(final HashMap<String, Schema> schemas) {
 		this.schemas = schemas;
 	}
-
+	
 }

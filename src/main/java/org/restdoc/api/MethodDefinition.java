@@ -24,83 +24,82 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "description", "statusCodes", "accepts", "headers", "response", "examples" })
+@JsonPropertyOrder({"description", "statusCodes", "accepts", "headers", "response", "examples"})
 public class MethodDefinition extends RestDocObject {
-
+	
 	private String description;
-
+	
 	private final Map<String, String> statusCodes = new HashMap<String, String>();
-
+	
 	private final Collection<Representation> accepts = new ArrayList<Representation>();
-
+	
 	private final Map<String, HeaderDefinition> headers = new HashMap<String, HeaderDefinition>();
-
+	
 	private ResponseDefinition response;
-
+	
 	private final Collection<ExampleRequest> examples = new ArrayList<ExampleRequest>();
-
+	
+	
 	/**
 	 * @return the description
 	 */
 	public String getDescription() {
 		return this.description;
 	}
-
+	
 	/**
-	 * @param description
-	 *            the description to set
+	 * @param description the description to set
 	 */
 	public void setDescription(final String description) {
 		this.description = description;
 	}
-
+	
 	/**
 	 * @return the statusCodes
 	 */
 	public Map<String, String> getStatusCodes() {
 		return this.statusCodes;
 	}
-
+	
 	/**
 	 * @return the response
 	 */
 	public ResponseDefinition getResponse() {
 		return this.response;
 	}
-
+	
 	/**
-	 * @param response
-	 *            the response to set
+	 * @param response the response to set
 	 */
 	public void setResponse(final ResponseDefinition response) {
 		this.response = response;
 	}
-
+	
 	/**
 	 * @return the accepts
 	 */
 	public Collection<Representation> getAccepts() {
 		return this.accepts;
 	}
-
+	
 	/**
 	 * @return the headers
 	 */
 	public Map<String, HeaderDefinition> getHeaders() {
 		return this.headers;
 	}
-
+	
 	/**
 	 * @return the examples
 	 */
 	public Collection<ExampleRequest> getExamples() {
 		return this.examples;
 	}
-
+	
 	// #############################################################
 	// nice builder methods
 	// #############################################################
-
+	
 	/**
 	 * @param _description
 	 * @return this
@@ -109,7 +108,7 @@ public class MethodDefinition extends RestDocObject {
 		this.setDescription(_description);
 		return this;
 	}
-
+	
 	/**
 	 * @param _code
 	 * @param _description
@@ -119,7 +118,7 @@ public class MethodDefinition extends RestDocObject {
 		this.getStatusCodes().put(_code, _description);
 		return this;
 	}
-
+	
 	/**
 	 * @param _type
 	 * @param _schema
@@ -129,7 +128,7 @@ public class MethodDefinition extends RestDocObject {
 		this.getAccepts().add(new Representation(_type, _schema));
 		return this;
 	}
-
+	
 	/**
 	 * @param _name
 	 * @param _description
@@ -141,7 +140,7 @@ public class MethodDefinition extends RestDocObject {
 		this.getHeaders().put(_name, def);
 		return this;
 	}
-
+	
 	/**
 	 * @param _response
 	 * @return this
@@ -150,7 +149,7 @@ public class MethodDefinition extends RestDocObject {
 		this.setResponse(_response);
 		return this;
 	}
-
+	
 	/**
 	 * @param _exampleRequest
 	 * @return this
@@ -159,5 +158,5 @@ public class MethodDefinition extends RestDocObject {
 		this.getExamples().add(_exampleRequest);
 		return this;
 	}
-
+	
 }

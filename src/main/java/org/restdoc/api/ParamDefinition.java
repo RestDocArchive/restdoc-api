@@ -22,47 +22,47 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "description", "validations" })
+@JsonPropertyOrder({"description", "validations"})
 public class ParamDefinition extends RestDocObject {
-
+	
 	private String description = "";
-
+	
 	private final Collection<ParamValidation> validations = new ArrayList<ParamValidation>();
-
+	
+	
 	/**
 	 * 
 	 */
 	public ParamDefinition() {
 		//
 	}
-
+	
 	/**
 	 * @param description
 	 */
 	public ParamDefinition(final String description) {
 		this.description = description;
 	}
-
+	
 	/**
 	 * @return the description
 	 */
 	public String getDescription() {
 		return this.description;
 	}
-
+	
 	/**
-	 * @param description
-	 *            the description to set
+	 * @param description the description to set
 	 */
 	public void setDescription(final String description) {
 		this.description = description;
 	}
-
+	
 	/**
 	 * @return the validations
 	 */
 	public Collection<ParamValidation> getValidations() {
 		return this.validations;
 	}
-
+	
 }

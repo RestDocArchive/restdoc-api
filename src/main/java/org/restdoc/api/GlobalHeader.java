@@ -23,33 +23,34 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "request", "response" })
+@JsonPropertyOrder({"request", "response"})
 public class GlobalHeader extends RestDocObject {
-
+	
 	@JsonProperty("request")
 	private final Map<String, HeaderDefinition> requestHeader = new HashMap<String, HeaderDefinition>();
-
+	
 	@JsonProperty("response")
 	private final Map<String, HeaderDefinition> responseHeader = new HashMap<String, HeaderDefinition>();
-
+	
+	
 	/**
 	 * @return the requestHeader
 	 */
 	public Map<String, HeaderDefinition> getRequestHeader() {
 		return this.requestHeader;
 	}
-
+	
 	/**
 	 * @return the responseHeader
 	 */
 	public Map<String, HeaderDefinition> getResponseHeader() {
 		return this.responseHeader;
 	}
-
+	
 	// #############################################################
 	// nice builder methods
 	// #############################################################
-
+	
 	/**
 	 * @param _name
 	 * @param _description
@@ -61,7 +62,7 @@ public class GlobalHeader extends RestDocObject {
 		this.getRequestHeader().put(_name, def);
 		return this;
 	}
-
+	
 	/**
 	 * @param _name
 	 * @param _description
@@ -73,5 +74,5 @@ public class GlobalHeader extends RestDocObject {
 		this.getResponseHeader().put(_name, def);
 		return this;
 	}
-
+	
 }

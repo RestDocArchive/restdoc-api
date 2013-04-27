@@ -23,24 +23,25 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "path", "headers", "body" })
+@JsonPropertyOrder({"path", "headers", "body"})
 public class ExampleRequest extends RestDocObject {
-
+	
 	@JsonProperty("path")
 	private String path;
-
+	
 	@JsonProperty("body")
 	private String body;
-
+	
 	private final Map<String, String> headers = new HashMap<String, String>();
-
+	
+	
 	/**
 	 * 
 	 */
 	public ExampleRequest() {
 		//
 	}
-
+	
 	/**
 	 * @param path
 	 * @param body
@@ -49,48 +50,46 @@ public class ExampleRequest extends RestDocObject {
 		this.path = path;
 		this.body = body;
 	}
-
+	
 	/**
 	 * @return the path
 	 */
 	public String getPath() {
 		return this.path;
 	}
-
+	
 	/**
-	 * @param path
-	 *            the path to set
+	 * @param path the path to set
 	 */
 	public void setPath(final String path) {
 		this.path = path;
 	}
-
+	
 	/**
 	 * @return the body
 	 */
 	public String getBody() {
 		return this.body;
 	}
-
+	
 	/**
-	 * @param body
-	 *            the body to set
+	 * @param body the body to set
 	 */
 	public void setBody(final String body) {
 		this.body = body;
 	}
-
+	
 	/**
 	 * @return the headers
 	 */
 	public Map<String, String> getHeaders() {
 		return this.headers;
 	}
-
+	
 	// #############################################################
 	// nice builder methods
 	// #############################################################
-
+	
 	/**
 	 * @param _header
 	 * @param _value
@@ -100,5 +99,5 @@ public class ExampleRequest extends RestDocObject {
 		this.getHeaders().put(_header, _value);
 		return this;
 	}
-
+	
 }

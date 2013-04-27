@@ -22,10 +22,9 @@ import org.restdoc.api.util.RestDocParser;
  * 
  */
 public class TestExampleFile {
-
+	
 	/**
-	 * @throws IOException
-	 *             on parse errors
+	 * @throws IOException on parse errors
 	 */
 	@Test
 	public void parse() throws IOException {
@@ -33,5 +32,5 @@ public class TestExampleFile {
 		System.out.println(RestDocParser.writeRestDoc(doc));
 		System.out.println(doc.getHeaders().getAdditionalBoolean("extension"));
 	}
-
+	
 }

@@ -23,82 +23,80 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "id", "description", "path", "params", "methods" })
+@JsonPropertyOrder({"id", "description", "path", "params", "methods"})
 public class RestResource extends RestDocObject {
-
+	
 	private String id;
-
+	
 	private String description;
-
+	
 	private String path;
-
+	
 	private final Map<String, ParamDefinition> params = new HashMap<String, ParamDefinition>();
-
+	
 	private final Map<String, MethodDefinition> methods = new HashMap<String, MethodDefinition>();
-
+	
+	
 	/**
 	 * @return the id
 	 */
 	public String getId() {
 		return this.id;
 	}
-
+	
 	/**
-	 * @param id
-	 *            the id to set
+	 * @param id the id to set
 	 */
 	public void setId(final String id) {
 		this.id = id;
 	}
-
+	
 	/**
 	 * @return the description
 	 */
 	public String getDescription() {
 		return this.description;
 	}
-
+	
 	/**
-	 * @param description
-	 *            the description to set
+	 * @param description the description to set
 	 */
 	public void setDescription(final String description) {
 		this.description = description;
 	}
-
+	
 	/**
 	 * @return the path
 	 */
 	public String getPath() {
 		return this.path;
 	}
-
+	
 	/**
-	 * @param path
-	 *            the path to set
+	 * @param path the path to set
 	 */
 	public void setPath(final String path) {
 		this.path = path;
 	}
-
+	
 	/**
 	 * @return the params
 	 */
 	public Map<String, ParamDefinition> getParams() {
 		return this.params;
 	}
-
+	
 	/**
 	 * @return the methods
 	 */
 	public Map<String, MethodDefinition> getMethods() {
 		return this.methods;
 	}
-
+	
 	// #############################################################
 	// nice builder methods
 	// #############################################################
-
+	
 	/**
 	 * @param _id
 	 * @return this
@@ -107,7 +105,7 @@ public class RestResource extends RestDocObject {
 		this.setId(_id);
 		return this;
 	}
-
+	
 	/**
 	 * @param _description
 	 * @return this
@@ -116,7 +114,7 @@ public class RestResource extends RestDocObject {
 		this.setDescription(_description);
 		return this;
 	}
-
+	
 	/**
 	 * @param _path
 	 * @return this
@@ -125,7 +123,7 @@ public class RestResource extends RestDocObject {
 		this.setPath(_path);
 		return this;
 	}
-
+	
 	/**
 	 * @param _name
 	 * @param _description
@@ -139,7 +137,7 @@ public class RestResource extends RestDocObject {
 		this.getParams().put(_name, def);
 		return this;
 	}
-
+	
 	/**
 	 * @param verb
 	 * @param method

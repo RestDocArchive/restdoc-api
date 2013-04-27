@@ -24,31 +24,32 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "types", "headers" })
+@JsonPropertyOrder({"types", "headers"})
 public class ResponseDefinition extends RestDocObject {
-
+	
 	private final Collection<Representation> types = new ArrayList<Representation>();
-
+	
 	private final Map<String, HeaderDefinition> headers = new HashMap<String, HeaderDefinition>();
-
+	
+	
 	/**
 	 * @return the types
 	 */
 	public Collection<Representation> getTypes() {
 		return this.types;
 	}
-
+	
 	/**
 	 * @return the headers
 	 */
 	public Map<String, HeaderDefinition> getHeaders() {
 		return this.headers;
 	}
-
+	
 	// #############################################################
 	// nice builder methods
 	// #############################################################
-
+	
 	/**
 	 * @param _type
 	 * @param _schema
@@ -61,7 +62,7 @@ public class ResponseDefinition extends RestDocObject {
 		this.getTypes().add(def);
 		return this;
 	}
-
+	
 	/**
 	 * @param _name
 	 * @param _description

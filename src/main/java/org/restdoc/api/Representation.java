@@ -19,20 +19,21 @@ import org.restdoc.api.util.RestDocObject;
  * @author hoegertn
  * 
  */
-@JsonPropertyOrder({ "type", "schema" })
+@JsonPropertyOrder({"type", "schema"})
 public class Representation extends RestDocObject {
-
+	
 	private String type;
-
+	
 	private String schema;
-
+	
+	
 	/**
 	 * 
 	 */
 	public Representation() {
 		//
 	}
-
+	
 	/**
 	 * @param type
 	 * @param schema
@@ -41,35 +42,33 @@ public class Representation extends RestDocObject {
 		this.type = type;
 		this.schema = schema;
 	}
-
+	
 	/**
 	 * @return the type
 	 */
 	public String getType() {
 		return this.type;
 	}
-
+	
 	/**
-	 * @param type
-	 *            the type to set
+	 * @param type the type to set
 	 */
 	public void setType(final String type) {
 		this.type = type;
 	}
-
+	
 	/**
 	 * @return the schema
 	 */
 	public String getSchema() {
 		return this.schema;
 	}
-
+	
 	/**
-	 * @param schema
-	 *            the schema to set
+	 * @param schema the schema to set
 	 */
 	public void setSchema(final String schema) {
 		this.schema = schema;
 	}
-
+	
 }

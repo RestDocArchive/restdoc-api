@@ -26,11 +26,11 @@ import org.restdoc.api.RestDoc;
  * 
  */
 public final class RestDocParser {
-
+	
 	private RestDocParser() {
 		//
 	}
-
+	
 	/**
 	 * @param json
 	 * @return the {@link RestDoc}
@@ -39,7 +39,7 @@ public final class RestDocParser {
 	public static RestDoc parseString(final String json) throws IOException {
 		return RestDocParser.createMapper().readValue(json, RestDoc.class);
 	}
-
+	
 	/**
 	 * @param json
 	 * @return the {@link RestDoc}
@@ -48,28 +48,26 @@ public final class RestDocParser {
 	public static RestDoc parseFile(final File json) throws IOException {
 		return RestDocParser.createMapper().readValue(json, RestDoc.class);
 	}
-
+	
 	/**
 	 * @param name
 	 * @return the {@link RestDoc}
 	 * @throws IOException
 	 */
-	@SuppressWarnings("resource")
 	public static RestDoc parseResource(final String name) throws IOException {
 		final InputStream stream = RestDocParser.class.getResourceAsStream(name);
 		return RestDocParser.createMapper().readValue(stream, RestDoc.class);
 	}
-
+	
 	/**
-	 * @param doc
-	 *            the {@link RestDoc} object
+	 * @param doc the {@link RestDoc} object
 	 * @return the JSON String
 	 * @throws IOException
 	 */
 	public static String writeRestDoc(final RestDoc doc) throws IOException {
 		return RestDocParser.createMapper().writeValueAsString(doc);
 	}
-
+	
 	/**
 	 * @return the Jackson mapper for RestDoc
 	 */
@@ -81,8 +79,8 @@ public final class RestDocParser {
 		mapper.disable(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES);
 		// Include only non-null values
 		mapper.setSerializationInclusion(Inclusion.NON_NULL);
-
+		
 		return mapper;
 	}
-
+	
 }
