@@ -12,8 +12,9 @@
  */
 package org.restdoc.api;
 
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
-import org.codehaus.jackson.schema.JsonSchema;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.fasterxml.jackson.module.jsonSchema.JsonSchema;
+
 import org.restdoc.api.util.RestDocObject;
 
 /**

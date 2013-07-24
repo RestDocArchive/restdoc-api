@@ -17,7 +17,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import org.restdoc.api.util.RestDocObject;
 
 /**

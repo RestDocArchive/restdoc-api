@@ -16,9 +16,11 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
-import org.codehaus.jackson.map.DeserializationConfig;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize.Inclusion;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.core.JsonParser.Feature;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import org.restdoc.api.RestDoc;
 
 /**
@@ -54,6 +56,7 @@ public final class RestDocParser {
 	 * @return the {@link RestDoc}
 	 * @throws IOException
 	 */
+	@SuppressWarnings("resource")
 	public static RestDoc parseResource(final String name) throws IOException {
 		final InputStream stream = RestDocParser.class.getResourceAsStream(name);
 		return RestDocParser.createMapper().readValue(stream, RestDoc.class);
@@ -74,12 +77,11 @@ public final class RestDocParser {
 	public static ObjectMapper createMapper() {
 		final ObjectMapper mapper = new ObjectMapper();
 		// Allow comments in JSON
-		mapper.configure(org.codehaus.jackson.JsonParser.Feature.ALLOW_COMMENTS, true);
+		mapper.configure(Feature.ALLOW_COMMENTS, true);
 		// Allow unknown properties for extensibility
-		mapper.disable(DeserializationConfig.Feature.FAIL_ON_UNKNOWN_PROPERTIES);
+		mapper.disable(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES);
 		// Include only non-null values
-		mapper.setSerializationInclusion(Inclusion.NON_NULL);
-		
+		mapper.setSerializationInclusion(Include.NON_NULL);
 		return mapper;
 	}
 	

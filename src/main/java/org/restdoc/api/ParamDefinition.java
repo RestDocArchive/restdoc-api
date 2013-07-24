@@ -15,7 +15,8 @@ package org.restdoc.api;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import org.codehaus.jackson.annotate.JsonPropertyOrder;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
 import org.restdoc.api.util.RestDocObject;
 
 /**
