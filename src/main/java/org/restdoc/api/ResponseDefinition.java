@@ -58,8 +58,8 @@ public class ResponseDefinition extends RestDocObject {
 	 */
 	public ResponseDefinition type(final String _type, final String _schema) {
 		final Representation def = new Representation();
-		def.setSchema(_schema);
-		def.setType(_type);
+		def.setSchema(_schema != null ? _schema : "");
+		def.setType(_type != null ? _type : "");
 		this.getTypes().add(def);
 		return this;
 	}
