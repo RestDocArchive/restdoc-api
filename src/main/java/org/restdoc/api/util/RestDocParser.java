@@ -16,12 +16,12 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
+import org.restdoc.api.RestDoc;
+
 import com.fasterxml.jackson.annotation.JsonInclude.Include;
 import com.fasterxml.jackson.core.JsonParser.Feature;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
-import org.restdoc.api.RestDoc;
 
 /**
  * @author hoegertn
@@ -56,7 +56,6 @@ public final class RestDocParser {
 	 * @return the {@link RestDoc}
 	 * @throws IOException
 	 */
-	@SuppressWarnings("resource")
 	public static RestDoc parseResource(final String name) throws IOException {
 		final InputStream stream = RestDocParser.class.getResourceAsStream(name);
 		return RestDocParser.createMapper().readValue(stream, RestDoc.class);
