@@ -61,13 +61,13 @@
 	</dependencies>
 
 	<scm>
-		<connection>scm:git:git@github.com:RestDoc/java-spec.git</connection>
-		<developerConnection>scm:git:git@github.com:RestDoc/java-spec.git</developerConnection>
-		<url>git@github.com:RestDoc/java-spec.git</url>
+		<connection>scm:git:git@github.com:RestDoc/restdoc-api.git</connection>
+		<developerConnection>scm:git:git@github.com:RestDoc/restdoc-api.git</developerConnection>
+		<url>git@github.com:RestDoc/restdoc-api.git</url>
 	</scm>
 	<issueManagement>
 		<system>github</system>
-		<url>https://github.com/RestDoc/java-spec/issues</url>
+		<url>https://github.com/RestDoc/restdoc-api/issues</url>
 	</issueManagement>
 
 	<build>
